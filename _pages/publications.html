@@ -11,11 +11,16 @@ author_profile: true
 
 {% include base_path %}
 
+{% assign visible_pubs = site.publications | where_exp: "post", "post.published != false" %}
+
+{% if visible_pubs.size == 0 %}
+  <p>No publications yet — this page will be updated as my work is published. Please check back later.</p>
+{% else %}
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
   {% for category in site.publication_category  %}
     {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
+    {% for post in visible_pubs reversed %}
       {% if post.category != category[0] %}
         {% continue %}
       {% endif %}
@@ -27,10 +32,8 @@ author_profile: true
     {% endfor %}
   {% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
+  {% for post in visible_pubs reversed %}
     {% include archive-single.html %}
   {% endfor %}
 {% endif %}
-
-
-
+{% endif %}
