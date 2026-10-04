@@ -19,6 +19,8 @@ Research Interests
 
 Selected Projects
 ======
+**[Recall Agent — Personal AI with User-Controlled Memory]({{ '/projects/recall-agent/' | relative_url }})** combines editable long-term memory, recent conversation history and source-referenced knowledge retrieval. Users can register, bring their own model API and access the same workspace across devices. The private deployment has passed real-model memory-recall and restart-persistence checks. [Interactive demo](https://bstronger1.github.io/recall-agent/) · [Source code](https://github.com/BStronger1/recall-agent)
+
 **[AI PPT生成 — AI Presentation Generator]({{ '/projects/ai-ppt-generator/' | relative_url }})** converts project materials into editable presentation slides with outline-level source excerpts. The application includes a project-defense workflow, evidence review, and persistent deployment on a private Linux server. A screenshot and downloadable example are available on the project page.
 
 **[Agent Workbench](https://github.com/BStronger1/agent-workbench)** — A personal AI workspace connecting project memory, self-contained application generation, browser interaction checks and bounded repair. Includes source-grounded document retrieval, development reports and user-configured models with encrypted API-key storage. Built with Java/Spring Boot, Vue/TypeScript and Playwright. [Project details](/projects/agent-workbench/)
@@ -27,6 +29,7 @@ Verification covers 25 backend tests, browser end-to-end checks and 36 determini
 
 News
 ======
+* **October 2026:** Added Recall Agent to my portfolio, with account-bound memory, encrypted personal model credentials and a verified live-model deployment on a private Linux server.
 * **October 2026:** Added AI PPT生成 to my project portfolio after validating material upload, real-model generation, editable PPTX export, and persistence across service restarts.
 
 Contact

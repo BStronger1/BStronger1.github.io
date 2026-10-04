@@ -5,6 +5,18 @@ permalink: /projects/
 author_profile: true
 ---
 
+## [Recall Agent — Personal AI with User-Controlled Memory]({{ '/projects/recall-agent/' | relative_url }})
+
+Manage long-term preferences, facts and project context, combine them with recent conversations and retrieved knowledge, and inspect the evidence used in each answer. Self-service accounts keep memory and personal model settings available across devices.
+
+**Stack:** Java 21, Spring Boot, Vue 3, Vite, Chat Completions-compatible APIs.
+
+Verified 19 backend tests and live-model checks for memory recall, personal API configuration, login across devices and persistence after application restarts. The public demo uses sample content; the full service is available on an authorized campus/VPN network.
+
+[Project details and verification]({{ '/projects/recall-agent/' | relative_url }}) · [Interactive demo](https://bstronger1.github.io/recall-agent/) · [Source code](https://github.com/BStronger1/recall-agent)
+
+[![Recall Agent demo workspace with sample memory and context panels]({{ '/images/recall-agent.png' | relative_url }})]({{ '/projects/recall-agent/' | relative_url }})
+
 ## [Agent Workbench — Project Memory & Browser-Validated Repair]({{ '/projects/agent-workbench/' | relative_url }})
 
 Connect requirements, versioned project memory, self-contained HTML generation, browser checks and bounded repair. Includes source-grounded project knowledge, Markdown development reports and user-configured models with encrypted API-key storage.

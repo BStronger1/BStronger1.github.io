@@ -22,6 +22,18 @@ Research Interests
 
 Projects
 ======
+### [Recall Agent — Personal AI with User-Controlled Memory]({{ '/projects/recall-agent/' | relative_url }})
+**Personal project · October 2026 · AI-assisted development**
+
+Java 21 · Spring Boot · Vue 3 · Chat Completions-compatible APIs
+
+* Built a memory-assisted conversation workflow combining recent messages, explicitly saved preferences/facts/project context, and retrieved knowledge; exposed recalled memory and source references alongside answers.
+* Added self-service registration, persistent login and account-bound workspaces, with cross-device access and a binding flow for existing browser workspaces. New accounts use their own model API credentials, encrypted at rest with AES-GCM.
+* Implemented local keyword retrieval and adapters for Dify / RAGFlow; account workspaces currently use isolated local knowledge. External adapters have fixture-based tests and require separate live-service validation.
+* Deployed the combined frontend/backend on a private Linux server with persistent storage and process supervision; passed 19 backend tests and live-model checks for memory recall, account login, credential isolation and restart persistence.
+
+[Source code](https://github.com/BStronger1/recall-agent) · [Interactive demo](https://bstronger1.github.io/recall-agent/) · [Implementation and verification]({{ '/projects/recall-agent/' | relative_url }})
+
 ### [AI PPT生成 — AI Presentation Generator]({{ '/projects/ai-ppt-generator/' | relative_url }})
 **AI Product · October 2026**
 
