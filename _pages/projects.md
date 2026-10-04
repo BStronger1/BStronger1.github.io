@@ -11,7 +11,7 @@ Connect requirements, versioned project memory, self-contained HTML generation, 
 
 **Stack:** Java 21, Spring Boot, Vue 3, TypeScript, Playwright.
 
-Verified 24 backend tests, browser end-to-end checks and 36 deterministic demo cases. Live-model integration is implemented but not yet API-validated; demo results are workflow checks, not model performance measurements.
+Verified 25 backend tests, browser end-to-end checks and 36 deterministic demo cases. Live-model integration is implemented but not yet API-validated; demo results are workflow checks, not model performance measurements.
 
 [View project and evidence]({{ '/projects/agent-workbench/' | relative_url }}) · [Source code](https://github.com/BStronger1/agent-workbench)
 

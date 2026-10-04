@@ -24,9 +24,11 @@ A personal AI workspace for turning requirements into verifiable artifacts, with
 
 Java 21 and Spring Boot serve the API and packaged Vue/TypeScript frontend. Per-project snapshots persist state without external databases. Generated artifacts remain self-contained HTML: the service does not install or execute model-generated npm projects. Browser preview uses an isolated iframe and content security policy; the verification worker blocks external requests.
 
+The private deployment supports HTTPS with a dedicated local CA. Certificate-chain and IP-identity verification, browser workflow checks and migration of existing workspace cookies to Secure cookies have been tested. Client devices must explicitly trust the local CA before normal access.
+
 ### What has been verified
 
-24 backend tests cover persistence, ownership isolation, memory updates, failure handling, repair limits, budget checks, encrypted model configuration and request routing. Browser checks cover the generation workflow, retrieval, reporting and model settings. In 36 deterministic demo cases, 18 passed initially and 18 intentionally injected button failures passed after a predefined repair. This validates the workflow on those fixtures, **not** real-model quality or the effectiveness of memory retrieval.
+25 backend tests cover persistence, ownership isolation, memory updates, failure handling, repair limits, budget checks, encrypted model configuration and request routing. Browser checks cover the generation workflow, retrieval, reporting and model settings. In 36 deterministic demo cases, 18 passed initially and 18 intentionally injected button failures passed after a predefined repair. This validates the workflow on those fixtures, **not** real-model quality or the effectiveness of memory retrieval.
 
 The live-model HTTP adapter is implemented; actual provider compatibility, generation quality and model comparisons remain unverified until API configuration is supplied.
 
