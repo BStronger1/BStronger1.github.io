@@ -17,9 +17,13 @@ Research Interests
 * Memory-augmented large language models
 * Retrieval and knowledge organization
 
-Selected Project
+Selected Projects
 ======
 **[AI PPT生成 — AI Presentation Generator]({{ '/projects/ai-ppt-generator/' | relative_url }})** converts project materials into editable presentation slides with outline-level source excerpts. This AI-assisted adaptation adds a project-defense workflow, evidence review, and persistent deployment on a private Linux server. A screenshot and downloadable example are available on the project page.
+
+**[Agent Workbench](https://github.com/BStronger1/agent-workbench)** — A personal AI workspace connecting project memory, self-contained application generation, browser interaction checks and bounded repair. Includes source-grounded document retrieval and development reports. Built with Java/Spring Boot, Vue/TypeScript and Playwright, with AI-assisted development. [Project details](/projects/agent-workbench/)
+
+Verification covers 13 backend tests, browser end-to-end checks and 36 deterministic demo cases. These are workflow validation results; live-model integration has not yet been API-validated.
 
 News
 ======
