@@ -1,0 +1,30 @@
+---
+layout: archive
+lang: zh-CN
+translation_url: /publications/
+title: "论文"
+permalink: /zh/publications/
+author_profile: true
+---
+
+{% if site.author.googlescholar %}
+  <div class="wordwrap">也可在我的 <a href="{{ site.author.googlescholar }}">Google Scholar 主页</a>查看论文。</div>
+{% endif %}
+{% include base_path %}
+{% assign visible_pubs = site.publications | where_exp: "post", "post.published != false" %}
+{% if visible_pubs.size == 0 %}
+  <p>目前暂无已发表论文，后续研究发表后将在此更新。</p>
+{% else %}
+  {% if site.publication_category %}
+    {% for category in site.publication_category %}
+      {% assign title_shown = false %}
+      {% for post in visible_pubs reversed %}
+        {% if post.category != category[0] %}{% continue %}{% endif %}
+        {% unless title_shown %}<h2>{{ category[1].title }}</h2><hr />{% assign title_shown = true %}{% endunless %}
+        {% include archive-single.html %}
+      {% endfor %}
+    {% endfor %}
+  {% else %}
+    {% for post in visible_pubs reversed %}{% include archive-single.html %}{% endfor %}
+  {% endif %}
+{% endif %}

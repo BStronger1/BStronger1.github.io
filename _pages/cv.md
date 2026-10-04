@@ -1,4 +1,6 @@
 ---
+lang: en
+translation_url: /zh/cv/
 layout: archive
 title: "CV"
 permalink: /cv/

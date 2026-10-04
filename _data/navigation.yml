@@ -16,3 +16,11 @@ main:
 
   - title: "CV"
     url: /cv/
+
+zh:
+  - title: "项目"
+    url: /zh/projects/
+  - title: "论文"
+    url: /zh/publications/
+  - title: "简历"
+    url: /zh/cv/

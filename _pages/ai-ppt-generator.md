@@ -1,4 +1,6 @@
 ---
+lang: en
+translation_url: /zh/projects/ai-ppt-generator/
 layout: single
 title: "AI PPT生成 — AI Presentation Generator"
 permalink: /projects/ai-ppt-generator/

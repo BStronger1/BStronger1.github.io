@@ -1,4 +1,6 @@
 ---
+lang: en
+translation_url: /zh/projects/agent-workbench/
 layout: single
 title: "Agent Workbench"
 permalink: /projects/agent-workbench/

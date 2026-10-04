@@ -1,4 +1,6 @@
 ---
+lang: en
+translation_url: /zh/projects/recall-agent/
 layout: single
 title: "Recall Agent"
 permalink: /projects/recall-agent/

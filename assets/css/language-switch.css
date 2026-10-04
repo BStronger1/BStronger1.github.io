@@ -1,0 +1,31 @@
+.greedy-nav .language-switch > span {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  white-space: nowrap;
+  font-size: .75em;
+  padding: 0 .45rem;
+}
+.greedy-nav .language-switch a {
+  display: inline-block;
+  margin: 0;
+  padding: .6rem .15rem;
+}
+.greedy-nav .language-switch a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+.greedy-nav .language-switch a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+html[lang="zh-CN"] .page__content,
+html[lang="zh-CN"] .archive {
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 480px) {
+  .greedy-nav .masthead__menu-item--lg { font-size: .8em; margin-right: .2rem; padding-right: .2rem; }
+  .greedy-nav .language-switch > span { padding: 0 .1rem; gap: .15rem; }
+}

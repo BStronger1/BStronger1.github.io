@@ -1,4 +1,6 @@
 ---
+lang: en
+translation_url: /zh/projects/
 layout: archive
 title: "Projects"
 permalink: /projects/

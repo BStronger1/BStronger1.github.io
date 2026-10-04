@@ -1,4 +1,10 @@
 {% include base_path %}
+{% assign main_navigation = site.data.navigation.main %}
+{% assign home_path = '/' %}
+{% if page.lang == 'zh-CN' %}
+  {% assign main_navigation = site.data.navigation.zh %}
+  {% assign home_path = '/zh/' %}
+{% endif %}
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
@@ -6,9 +12,20 @@
         <button><span class="navicon"></span></button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a href="{{ base_path }}/">{{ site.title }}</a>
+            <a href="{{ home_path | relative_url }}">{{ site.title }}</a>
           </li>
-          {% for link in site.data.navigation.main %}
+          {% if page.translation_url %}
+          <li class="masthead__menu-item persist language-switch">
+            <span role="group" aria-label="Language / 语言">
+              {% if page.lang == 'zh-CN' %}
+                <a href="{{ page.url | relative_url }}" lang="zh-CN" hreflang="zh-CN" aria-current="page">中文</a><span aria-hidden="true">/</span><a href="{{ page.translation_url | relative_url }}" lang="en" hreflang="en">English</a>
+              {% else %}
+                <a href="{{ page.translation_url | relative_url }}" lang="zh-CN" hreflang="zh-CN">中文</a><span aria-hidden="true">/</span><a href="{{ page.url | relative_url }}" lang="en" hreflang="en" aria-current="page">English</a>
+              {% endif %}
+            </span>
+          </li>
+          {% endif %}
+          {% for link in main_navigation %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
             {% else %}
