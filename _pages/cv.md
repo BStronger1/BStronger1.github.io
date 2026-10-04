@@ -28,7 +28,7 @@ Projects
 React / TypeScript · FastAPI · PostgreSQL · Redis / ARQ · LangGraph · python-pptx
 
 * Added account-specific model selection, API key encryption, model discovery and connection testing, with isolated credentials across users.
-* Implemented a project-defense brief covering audience, duration, focus, and the distinction between completed work and future plans.
+* Implemented six audience presets and AI narrative planning informed by cognitive-load, multimedia-learning, and elaboration principles; carried the plan into page roles, visual structure, timing, and speaker notes.
 * Added outline-level source excerpts, reference validation, and invalidation of citations after edits; exposed evidence for review in the editor and preserved it in PPTX speaker notes.
 * Deployed the application, worker, database, and queue in an isolated Linux user environment with persistent storage and process supervision; verified a six-slide real-model generation/export workflow and data retention after service restarts.
 
