@@ -18,6 +18,7 @@ A personal AI workspace for turning requirements into verifiable artifacts, with
 - **Project knowledge:** text/Markdown ingestion with lexical retrieval and paragraph-level references.
 - **Reporting:** Markdown development reports derived from recorded sources and run evidence.
 - **Evaluation:** separate demo/live run labels, latency and usage records, and reproducible contract fixtures.
+- **Model settings:** users supply their own endpoint, model name and API key; configurations are encrypted per browser workspace, with connection testing, enable/disable and removal controls.
 
 ### Engineering choices
 
@@ -25,10 +26,10 @@ Java 21 and Spring Boot serve the API and packaged Vue/TypeScript frontend. Per-
 
 ### What has been verified
 
-13 backend tests and a browser end-to-end test cover persistence, ownership isolation, memory updates, failure handling, repair limits, budget checks, document retrieval and reporting. In 36 deterministic demo cases, 18 passed initially and 18 intentionally injected button failures passed after a predefined repair. This validates the workflow on those fixtures, **not** real-model quality or the effectiveness of memory retrieval.
+24 backend tests cover persistence, ownership isolation, memory updates, failure handling, repair limits, budget checks, encrypted model configuration and request routing. Browser checks cover the generation workflow, retrieval, reporting and model settings. In 36 deterministic demo cases, 18 passed initially and 18 intentionally injected button failures passed after a predefined repair. This validates the workflow on those fixtures, **not** real-model quality or the effectiveness of memory retrieval.
 
 The live-model HTTP adapter is implemented; actual provider compatibility, generation quality and model comparisons remain unverified until API configuration is supplied.
 
-### Provenance and contribution
+### Personal project
 
-The project grew from studying [yu-ai-code-mother](https://github.com/liyupi/yu-ai-code-mother). The public repository contains a newly authored independent workbench module rather than a copy of the upstream implementation. Development was AI-assisted. Contributions include the runnable no-key workflow, memory versioning, acceptance contracts, bounded repair, browser verification, evidence reporting and deployment tooling.
+I developed Agent Workbench to bring application building, project knowledge and development reporting into one workspace. The implementation includes memory versioning, acceptance contracts, bounded repair, browser verification, user-configured models, evidence reporting and deployment tooling.

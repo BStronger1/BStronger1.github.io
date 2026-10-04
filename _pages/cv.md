@@ -35,13 +35,13 @@ React / TypeScript · FastAPI · PostgreSQL · Redis / ARQ · LangGraph · pytho
 Live access is restricted to the authorized internal network; a [project walkthrough and sample PPTX]({{ '/projects/ai-ppt-generator/' | relative_url }}) are publicly available.
 
 ### Agent Workbench — Personal AI workspace with project memory and browser-validated repair
-**AI-assisted development · October 2026**
+**Personal project · October 2026**
 
 [Source code](https://github.com/BStronger1/agent-workbench) · [Project overview](/projects/agent-workbench/)
 
-* Built an independently runnable Spring Boot and Vue workbench with AI-assisted development, connecting self-contained HTML generation, browser interaction checks, bounded repair, version selection and artifact export.
+* Developed a Spring Boot and Vue AI workbench connecting self-contained HTML generation, browser interaction checks, bounded repair, version selection and artifact export.
 * Implemented versioned project constraints, decisions and lessons with lexical retrieval and source references; supported no-memory, recent-request and retrieval context modes.
-* Added project-document retrieval, Markdown reporting and run evidence. Verified 13 backend tests, browser end-to-end checks and 36 deterministic demo cases. Live-model integration is implemented but not yet API-validated; demo results are not LLM performance measurements.
+* Added project-document retrieval, Markdown reporting and user-configured models with owner-scoped encrypted API-key storage. Verified 24 backend tests, browser end-to-end checks and 36 deterministic demo cases. Live-model integration is implemented but not yet API-validated; demo results are not LLM performance measurements.
 
 Skills
 ======

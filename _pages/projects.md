@@ -7,11 +7,11 @@ author_profile: true
 
 ## [Agent Workbench — Project Memory & Browser-Validated Repair]({{ '/projects/agent-workbench/' | relative_url }})
 
-Connect requirements, versioned project memory, self-contained HTML generation, browser checks and bounded repair. Includes source-grounded project knowledge and Markdown development reports.
+Connect requirements, versioned project memory, self-contained HTML generation, browser checks and bounded repair. Includes source-grounded project knowledge, Markdown development reports and user-configured models with encrypted API-key storage.
 
 **Stack:** Java 21, Spring Boot, Vue 3, TypeScript, Playwright.
 
-Verified 13 backend tests, browser end-to-end checks and 36 deterministic demo cases. Live-model integration is implemented but not yet API-validated; demo results are workflow checks, not model performance measurements.
+Verified 24 backend tests, browser end-to-end checks and 36 deterministic demo cases. Live-model integration is implemented but not yet API-validated; demo results are workflow checks, not model performance measurements.
 
 [View project and evidence]({{ '/projects/agent-workbench/' | relative_url }}) · [Source code](https://github.com/BStronger1/agent-workbench)
 
