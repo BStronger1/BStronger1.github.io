@@ -17,9 +17,13 @@ Research Interests
 * Memory-augmented large language models
 * Retrieval and knowledge organization
 
+Selected Project
+======
+**[AI PPT生成 — AI Presentation Generator]({{ '/projects/ai-ppt-generator/' | relative_url }})** converts project materials into editable presentation slides with outline-level source excerpts. This AI-assisted adaptation adds a project-defense workflow, evidence review, and persistent deployment on a private Linux server. A screenshot and downloadable example are available on the project page.
+
 News
 ======
-* This site is under construction — more content coming soon.
+* **October 2026:** Added AI PPT生成 to my project portfolio after validating material upload, real-model generation, editable PPTX export, and persistence across service restarts.
 
 Contact
 ======
