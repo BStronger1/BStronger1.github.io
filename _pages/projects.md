@@ -19,7 +19,7 @@ Verified 13 backend tests, browser end-to-end checks and 36 deterministic demo c
 
 ## [AI PPT生成 — AI Presentation Generator]({{ '/projects/ai-ppt-generator/' | relative_url }})
 
-Turn project materials into editable presentation slides and review the source excerpts behind outline claims. This AI-assisted adaptation adds a project-defense workflow, evidence review, and deployment on a private Linux server.
+Turn project materials into editable presentation slides and review the source excerpts behind outline claims. The application includes a project-defense workflow, evidence review, and deployment on a private Linux server.
 
 **Stack:** React / TypeScript, FastAPI, PostgreSQL, Redis / ARQ, LangGraph, python-pptx.
 
