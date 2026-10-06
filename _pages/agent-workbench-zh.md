@@ -7,7 +7,7 @@ permalink: /zh/projects/agent-workbench/
 author_profile: true
 ---
 
-一个将需求转化为可验证产物的个人 AI 工作台，具备显式项目记忆和基于来源的报告能力。
+一个围绕大模型应用生成构建的个人 AI 工作台：将项目记忆注入模型上下文，以浏览器验收结果驱动有限次数代码修复，并记录版本、耗时与 Token 用量。
 
 [GitHub 仓库](https://github.com/BStronger1/agent-workbench) · [架构](https://github.com/BStronger1/agent-workbench/blob/main/docs/ARCHITECTURE.md) · [验证记录](https://github.com/BStronger1/agent-workbench/blob/main/docs/EVALUATION.md)
 
@@ -23,6 +23,8 @@ author_profile: true
 - **模型设置：** 用户提供自己的接口、模型名和 API 密钥；配置按浏览器工作区加密保存，支持连接测试、启用 / 禁用和删除。
 
 ### 工程设计
+
+核心 AI 链路为：需求与记忆检索 → Chat Completions 请求 → HTML 结构校验 → Playwright 文本与交互验收 → 将失败原因和上一版代码反馈给模型。修复最多 3 次，调用前检查 Token 预算；任务使用 2 个执行线程与 12 个排队槽，避免无限排队。知识检索与报告整理目前采用确定性逻辑，不将它们计为模型生成能力。
 
 Java 21 和 Spring Boot 提供 API 并托管打包后的 Vue / TypeScript 前端。项目快照在无外部数据库的情况下持久化状态。生成产物保持为自包含 HTML，服务不会安装或执行模型生成的 npm 项目。浏览器预览使用隔离 iframe 和内容安全策略，验证进程阻止外部请求。
 

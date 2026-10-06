@@ -7,7 +7,7 @@ permalink: /projects/agent-workbench/
 author_profile: true
 ---
 
-A personal AI workspace for turning requirements into verifiable artifacts, with explicit project memory and source-grounded reporting.
+A personal AI workspace centered on LLM application generation: project memory augments model context, browser validation feeds bounded code-repair attempts, and run records retain versions, latency and token usage.
 
 [GitHub repository](https://github.com/BStronger1/agent-workbench) · [Architecture](https://github.com/BStronger1/agent-workbench/blob/main/docs/ARCHITECTURE.md) · [Verification record](https://github.com/BStronger1/agent-workbench/blob/main/docs/EVALUATION.md)
 
@@ -23,6 +23,8 @@ A personal AI workspace for turning requirements into verifiable artifacts, with
 - **Model settings:** users supply their own endpoint, model name and API key; configurations are encrypted per browser workspace, with connection testing, enable/disable and removal controls.
 
 ### Engineering choices
+
+The AI workflow retrieves project context, calls a Chat Completions-compatible model, checks generated HTML, and runs Playwright text/interaction acceptance checks. Failures and previous code feed the next model attempt, with at most three repairs and a pre-call token-budget check. A two-worker executor has twelve queue slots. Document retrieval and report assembly currently use deterministic logic rather than model-generated answers.
 
 Java 21 and Spring Boot serve the API and packaged Vue/TypeScript frontend. Per-project snapshots persist state without external databases. Generated artifacts remain self-contained HTML: the service does not install or execute model-generated npm projects. Browser preview uses an isolated iframe and content security policy; the verification worker blocks external requests.
 

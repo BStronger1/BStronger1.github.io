@@ -21,7 +21,7 @@ Verified 19 backend tests and live-model checks for memory recall, personal API 
 
 ## [Agent Workbench — Project Memory & Browser-Validated Repair]({{ '/projects/agent-workbench/' | relative_url }})
 
-Connect requirements, versioned project memory, self-contained HTML generation, browser checks and bounded repair. Includes source-grounded project knowledge, Markdown development reports and user-configured models with encrypted API-key storage.
+Connect requirements and retrieved memory to LLM-generated HTML, browser acceptance checks and error-feedback repair. Includes three context strategies, token budgets, run evidence and encrypted user model configuration.
 
 **Stack:** Java 21, Spring Boot, Vue 3, TypeScript, Playwright.
 

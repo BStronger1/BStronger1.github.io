@@ -48,14 +48,17 @@ React / TypeScript · FastAPI · PostgreSQL · Redis / ARQ · LangGraph · pytho
 
 Live access is restricted to the authorized internal network; a [project walkthrough and sample PPTX]({{ '/projects/ai-ppt-generator/' | relative_url }}) are publicly available.
 
-### Agent Workbench — Personal AI workspace with project memory and browser-validated repair
+### Agent Workbench — Memory-Augmented AI App Generation and Browser-Validated Repair
 **Personal project · October 2026**
 
 [Source code](https://github.com/BStronger1/agent-workbench) · [Project overview](/projects/agent-workbench/)
 
-* Developed a Spring Boot and Vue AI workbench connecting self-contained HTML generation, browser interaction checks, bounded repair, version selection and artifact export.
-* Implemented versioned project constraints, decisions and lessons with lexical retrieval and source references; supported no-memory, recent-request and retrieval context modes.
-* Added project-document retrieval, Markdown reporting and user-configured models with owner-scoped encrypted API-key storage. Verified 25 backend tests, browser end-to-end checks and 36 deterministic demo cases. Live-model integration is implemented but not yet API-validated; demo results are not LLM performance measurements.
+Java 21 · Spring Boot · Vue 3 / TypeScript · Playwright · Chat Completions-compatible APIs
+
+* Implemented an LLM application-generation workflow that assembles requirements, project memory and acceptance criteria into model context, validates generated HTML with Playwright, and feeds failures and previous code into up to three repair attempts with version rollback.
+* Built versioned constraints, decisions and lessons with Chinese-bigram/keyword retrieval, source references and no-memory, recent-request and retrieved-memory context strategies.
+* Added user-configured models and AES-256-GCM encrypted API keys with browser-workspace isolation; bounded the task queue and token budget while recording latency, attempts and provider-reported usage.
+* Verified 25 backend tests, browser end-to-end checks and 36 deterministic demo cases, and deployed private Linux HTTPS access. The live adapter and evaluation runner are implemented; actual generation, repair quality and memory benefits await API testing.
 
 Skills
 ======

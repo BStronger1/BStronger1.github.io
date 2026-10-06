@@ -44,14 +44,17 @@ React / TypeScript · FastAPI · PostgreSQL · Redis / ARQ · LangGraph · pytho
 
 完整服务仅限授权内网访问；公开页面提供[项目介绍与示例 PPTX]({{ '/zh/projects/ai-ppt-generator/' | relative_url }})。
 
-### Agent Workbench — 结合项目记忆与浏览器验证修复的个人 AI 工作台
+### Agent Workbench — 项目记忆驱动的 AI 应用生成与自动验收工作台
 **个人项目 · 2026 年 10 月**
 
 [源代码](https://github.com/BStronger1/agent-workbench) · [项目概览]({{ '/zh/projects/agent-workbench/' | relative_url }})
 
-* 开发基于 Spring Boot 和 Vue 的 AI 工作台，连接自包含 HTML 生成、浏览器交互检查、有限次数修复、版本选择和产物导出。
-* 实现带版本的项目约束、决策与经验，通过关键词检索保留来源引用；支持无记忆、近期请求和检索上下文三种模式。
-* 增加项目文档检索、Markdown 报告和用户自定义模型，按所属工作区隔离并加密保存 API 密钥。通过 25 项后端测试、浏览器端到端检查和 36 个确定性演示案例。真实模型集成已实现，但尚未通过实际 API 调用验收；演示结果不代表 LLM 性能测量。
+Java 21 · Spring Boot · Vue 3 / TypeScript · Playwright · Chat Completions 兼容接口
+
+* 实现大模型应用生成工作流：将用户需求、项目记忆和验收要求组装为模型上下文，解析 HTML 产物，通过 Playwright 检查页面文本与按钮交互，将失败原因和上一版代码回传模型，支持最多 3 次修复与版本回退。
+* 实现项目约束、决策和经验的版本化管理，采用中文双字与关键词匹配检索上下文，支持无记忆、近期需求、检索记忆三种策略，保留召回来源与失效版本。
+* 实现用户自选模型与 API Key 配置，采用 AES-256-GCM 加密和浏览器空间隔离；为生成任务加入有限队列、Token 预算检查，以及耗时、尝试次数和供应商用量记录。
+* 完成 25 项后端测试、浏览器端到端验证和 36 项确定性演示验收，部署 Linux 内网 HTTPS 服务。真实模型适配器与评测入口已实现，真实生成、修复效果及记忆收益待 API 实测。
 
 技能
 ======

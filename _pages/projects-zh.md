@@ -21,7 +21,7 @@ author_profile: true
 
 ## [Agent Workbench — 项目记忆与浏览器验证修复]({{ '/zh/projects/agent-workbench/' | relative_url }})
 
-连接需求、带版本的项目记忆、自包含 HTML 生成、浏览器检查和有限次数修复。支持带来源的项目知识、Markdown 开发报告，以及 API 密钥加密存储的用户自定义模型。
+实现“需求与记忆上下文 → 模型生成 HTML → 浏览器验收 → 错误反馈修复”的 AI 应用工作流，支持三种上下文策略、Token 预算、运行证据和加密保存的用户模型配置。
 
 **技术栈：** Java 21、Spring Boot、Vue 3、TypeScript、Playwright。
 
