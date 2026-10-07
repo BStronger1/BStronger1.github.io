@@ -59,9 +59,11 @@ Python / FastAPI · LangChain · LangGraph · PostgreSQL / pgvector · Embedding
 * Implemented RAG with local multilingual embeddings and pgvector, combining Chinese-bigram/keyword and vector retrieval through reciprocal rank fusion, workspace/project filtering, active-memory synchronization and source-ID validation.
 * Developed structured Playwright contracts for checkbox, input, click and result assertions; froze acceptance criteria before generation and fed browser failures and reviewer feedback into the coding role while preserving artifacts and screenshots.
 * Added user-configured models, AES-256-GCM encrypted credentials, bounded queues, token-budget prechecks and per-role usage records while preserving the Java baseline and demo workflow.
-* Verified 29 Java and 17 Python tests plus real pgvector/embedding and browser integration. Evaluated six paired single/multi-role tasks with DMXAPI-deepseek-v4-flash (15 calls, 4/6 accepted) and two cited RAG probes (2/2 passed), preserving failures.
+* Verified 29 Java and 20 Python tests plus real pgvector/embedding and browser integration. Evaluated six paired single/multi-role tasks with DMXAPI-deepseek-v4-flash (15 calls, 4/6 accepted) and two cited RAG probes (2/2 passed), preserving failures.
 
 Deployed on private HTTPS. These authored development scenarios do not establish multi-agent quality gains; no fine-tuning has been performed. [Verification report](https://github.com/BStronger1/agent-workbench/blob/main/docs/GRAPH-LIVE-RESULTS.md)
+
+The failed checklist scenario was fixed and passed targeted single-role and multi-role reruns (2/2) with the same model and frozen contracts. Earlier full-evaluation and intermediate failures are preserved. This fix is verified on the full local service chain; server synchronization awaits SSH recovery. [Fix report](https://github.com/BStronger1/agent-workbench/blob/main/docs/CHECKLIST-REGRESSION.md)
 
 Skills
 ======

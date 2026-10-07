@@ -25,7 +25,9 @@ Connect requirements and retrieved memory to LLM-generated HTML, browser accepta
 
 **Stack:** LangChain, LangGraph, FastAPI, pgvector, Embedding / RAG, Playwright, Spring Boot, Vue / TypeScript.
 
-LangChain/LangGraph role workflows, checkpoint recovery, pgvector hybrid retrieval and cited RAG; verified with 29 Java tests, 17 Python tests and browser checks. The upgrade is deployed on private HTTPS. Six paired real-model tasks with DMXAPI-deepseek-v4-flash made 15 calls with 4/6 accepted, plus 2/2 cited RAG probes passed. All failures are retained; these are development scenarios, not a general benchmark.
+LangChain/LangGraph role workflows, checkpoint recovery, pgvector hybrid retrieval and cited RAG; verified with 29 Java tests, 20 Python tests and browser checks. The upgrade is deployed on private HTTPS. Six paired real-model tasks with DMXAPI-deepseek-v4-flash made 15 calls with 4/6 accepted, plus 2/2 cited RAG probes passed. All failures are retained; these are development scenarios, not a general benchmark.
+
+The failed checklist scenario was fixed and passed targeted single-role and multi-role reruns (2/2) with the same model and frozen contracts. Earlier full-evaluation and intermediate failures are preserved. This fix is verified on the full local service chain; server synchronization awaits SSH recovery. [Fix report](https://github.com/BStronger1/agent-workbench/blob/main/docs/CHECKLIST-REGRESSION.md)
 
 [View project and evidence]({{ '/projects/agent-workbench/' | relative_url }}) · [Source code](https://github.com/BStronger1/agent-workbench)
 

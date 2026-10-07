@@ -31,6 +31,8 @@ Spring Boot 保留用户空间隔离、API 和队列，Vue 提供工作台界面
 
 新版已部署内网 HTTPS；使用 DMXAPI-deepseek-v4-flash 完成 6 项同契约单角色/多角色真实任务（15 次调用，4/6 验收通过）及 2/2 项带引用 RAG 验证。失败记录完整保留，结果仅适用于这些开发场景。 [配对任务、RAG 与调试记录](https://github.com/BStronger1/agent-workbench/blob/main/docs/GRAPH-LIVE-RESULTS.md)
 
+原失败的清单场景已修复，使用同一模型与验收契约，在单角色和多角色下定向复测均通过（2/2）；保留此前完整评测及本轮中间失败。此次修复完成本地完整链路验证，服务器同步待 SSH 恢复。 [修复报告](https://github.com/BStronger1/agent-workbench/blob/main/docs/CHECKLIST-REGRESSION.md)
+
 ![基础链路真实模型生成的研究任务看板]({{ '/images/agent-workbench-live.png' | relative_url }})
 
 ### 部署与微调状态

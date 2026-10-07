@@ -25,7 +25,9 @@ author_profile: true
 
 **技术栈：** Java 21、Spring Boot、Vue 3、TypeScript、Playwright。
 
-基于 LangChain / LangGraph 的角色工作流、检查点恢复、pgvector 混合检索和带引用 RAG；通过 29 项 Java、17 项 Python 测试与实际浏览器验证。新版已部署内网 HTTPS；使用 DMXAPI-deepseek-v4-flash 完成 6 项同契约单角色/多角色真实任务（15 次调用，4/6 验收通过）及 2/2 项带引用 RAG 验证。失败记录完整保留，结果仅适用于这些开发场景。
+基于 LangChain / LangGraph 的角色工作流、检查点恢复、pgvector 混合检索和带引用 RAG；通过 29 项 Java、20 项 Python 测试与实际浏览器验证。新版已部署内网 HTTPS；使用 DMXAPI-deepseek-v4-flash 完成 6 项同契约单角色/多角色真实任务（15 次调用，4/6 验收通过）及 2/2 项带引用 RAG 验证。失败记录完整保留，结果仅适用于这些开发场景。
+
+原失败的清单场景已修复，使用同一模型与验收契约，在单角色和多角色下定向复测均通过（2/2）；保留此前完整评测及本轮中间失败。此次修复完成本地完整链路验证，服务器同步待 SSH 恢复。 [修复报告](https://github.com/BStronger1/agent-workbench/blob/main/docs/CHECKLIST-REGRESSION.md)
 
 [查看项目与验证依据]({{ '/zh/projects/agent-workbench/' | relative_url }}) · [源代码](https://github.com/BStronger1/agent-workbench)
 

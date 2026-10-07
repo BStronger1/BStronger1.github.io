@@ -27,7 +27,9 @@ Selected Projects
 
 **[Agent Workbench](https://github.com/BStronger1/agent-workbench)** — A personal AI workspace connecting project memory, self-contained application generation, browser interaction checks and bounded repair. Includes source-grounded document retrieval, development reports and user-configured models with encrypted API-key storage. Built with Python/FastAPI, LangChain, LangGraph, pgvector, Java/Spring Boot, Vue/TypeScript and Playwright. [Project details](/projects/agent-workbench/)
 
-LangChain/LangGraph role workflows, checkpoint recovery, pgvector hybrid retrieval and cited RAG; verified with 29 Java tests, 17 Python tests and browser checks. The upgrade is deployed on private HTTPS. Six paired real-model tasks with DMXAPI-deepseek-v4-flash made 15 calls with 4/6 accepted, plus 2/2 cited RAG probes passed. All failures are retained; these are development scenarios, not a general benchmark.
+LangChain/LangGraph role workflows, checkpoint recovery, pgvector hybrid retrieval and cited RAG; verified with 29 Java tests, 20 Python tests and browser checks. The upgrade is deployed on private HTTPS. Six paired real-model tasks with DMXAPI-deepseek-v4-flash made 15 calls with 4/6 accepted, plus 2/2 cited RAG probes passed. All failures are retained; these are development scenarios, not a general benchmark.
+
+The failed checklist scenario was fixed and passed targeted single-role and multi-role reruns (2/2) with the same model and frozen contracts. Earlier full-evaluation and intermediate failures are preserved. This fix is verified on the full local service chain; server synchronization awaits SSH recovery. [Fix report](https://github.com/BStronger1/agent-workbench/blob/main/docs/CHECKLIST-REGRESSION.md)
 
 News
 ======
