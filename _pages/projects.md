@@ -23,9 +23,9 @@ Verified 19 backend tests and live-model checks for memory recall, personal API 
 
 Connect requirements and retrieved memory to LLM-generated HTML, browser acceptance checks and error-feedback repair. Includes three context strategies, token budgets, run evidence and encrypted user model configuration.
 
-**Stack:** Java 21, Spring Boot, Vue 3, TypeScript, Playwright.
+**Stack:** LangChain, LangGraph, FastAPI, pgvector, Embedding / RAG, Playwright, Spring Boot, Vue / TypeScript.
 
-Added LangChain/LangGraph role workflows, persistent recovery, pgvector hybrid retrieval and cited RAG, covered by engineering integration tests. External-model comparison and private-server rollout of the upgrade await network recovery. Verified 25 backend tests, browser checks and 36 deterministic demo cases. Six real API tasks using DMXAPI-deepseek-v4-flash made eight generation/repair calls and accepted four tasks; both failed repair cases are preserved.
+LangChain/LangGraph role workflows, checkpoint recovery, pgvector hybrid retrieval and cited RAG; verified with 29 Java tests, 17 Python tests and browser checks. The upgrade is deployed on private HTTPS. Six paired real-model tasks with DMXAPI-deepseek-v4-flash made 15 calls with 4/6 accepted, plus 2/2 cited RAG probes passed. All failures are retained; these are development scenarios, not a general benchmark.
 
 [View project and evidence]({{ '/projects/agent-workbench/' | relative_url }}) · [Source code](https://github.com/BStronger1/agent-workbench)
 

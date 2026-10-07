@@ -22,9 +22,9 @@ author_profile: true
 
 **[AI PPT生成]({{ '/zh/projects/ai-ppt-generator/' | relative_url }})** 将项目材料转化为可编辑幻灯片，并为大纲要点提供原文摘录。应用包含项目答辩流程、证据审查和私有 Linux 服务器上的持久化部署。项目页面提供截图与可下载示例。
 
-**[Agent Workbench](https://github.com/BStronger1/agent-workbench)** 是一个个人 AI 工作台，连接项目记忆、自包含应用生成、浏览器交互检查和有限次数修复。它支持带来源的文档检索、开发报告，以及 API 密钥加密存储的用户自定义模型。技术栈为 Java / Spring Boot、Vue / TypeScript 和 Playwright。[项目详情]({{ '/zh/projects/agent-workbench/' | relative_url }})
+**[Agent Workbench](https://github.com/BStronger1/agent-workbench)** 是一个个人 AI 工作台，连接项目记忆、自包含应用生成、浏览器交互检查和有限次数修复。它支持带来源的文档检索、开发报告，以及 API 密钥加密存储的用户自定义模型。技术栈包括 Python / FastAPI、LangChain、LangGraph、pgvector、Java / Spring Boot、Vue / TypeScript 和 Playwright。[项目详情]({{ '/zh/projects/agent-workbench/' | relative_url }})
 
-新增 LangChain / LangGraph 角色工作流、检查点恢复、pgvector 混合检索和带引用 RAG，已通过工程集成验证；新版外部模型对照与内网更新待网络恢复。验证覆盖 25 项后端测试、浏览器端到端检查和 36 个确定性演示案例。另完成 DMXAPI-deepseek-v4-flash 的 6 项真实任务测试，按原验收通过 4 项，保留两项失败修复记录；结果不外推为通用模型性能。
+基于 LangChain / LangGraph 的角色工作流、检查点恢复、pgvector 混合检索和带引用 RAG；通过 29 项 Java、17 项 Python 测试与实际浏览器验证。新版已部署内网 HTTPS；使用 DMXAPI-deepseek-v4-flash 完成 6 项同契约单角色/多角色真实任务（15 次调用，4/6 验收通过）及 2/2 项带引用 RAG 验证。失败记录完整保留，结果仅适用于这些开发场景。
 
 动态
 ======

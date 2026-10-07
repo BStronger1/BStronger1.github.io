@@ -29,12 +29,12 @@ Spring Boot 保留用户空间隔离、API 和队列，Vue 提供工作台界面
 
 基础 Java 链路曾完成 36 个确定性演示验收，以及 DMXAPI-deepseek-v4-flash 的 6 项真实任务、8 次调用，首轮和最终均通过 4/6。两项清单任务的修复仍未满足原单击验收，失败证据完整保留。[真实测试报告](https://github.com/BStronger1/agent-workbench/blob/main/docs/LIVE-RESULTS.md)
 
-新图工作流已建立单角色/多角色同契约对照入口，但首次真实请求遇到 HTTPS 连接错误，未获得模型产物，后续任务已停止，不能宣称多 Agent 效果已经验证。[中断记录](https://github.com/BStronger1/agent-workbench/blob/main/evidence/graph-live-network-failure.json)
+新版已部署内网 HTTPS；使用 DMXAPI-deepseek-v4-flash 完成 6 项同契约单角色/多角色真实任务（15 次调用，4/6 验收通过）及 2/2 项带引用 RAG 验证。失败记录完整保留，结果仅适用于这些开发场景。 [配对任务、RAG 与调试记录](https://github.com/BStronger1/agent-workbench/blob/main/docs/GRAPH-LIVE-RESULTS.md)
 
 ![基础链路真实模型生成的研究任务看板]({{ '/images/agent-workbench-live.png' | relative_url }})
 
 ### 部署与微调状态
 
-基础版本已部署 Linux 内网 HTTPS，使用专用本地 CA。新版部署脚本已提供，turing SSH 连接尚未恢复，因此图编排版尚未更新到服务器。
+图编排版已部署 Linux 内网 HTTPS，使用专用本地 CA；FastAPI 和私有 PostgreSQL 仅监听本机。通过 17 项部署端 Python 测试、5 项 Node 契约/控制测试和实际网页回归，Java 回归为 29 项。服务未配置整机重启后的自动启动。
 
 已实现待审校训练样本导出和按任务分组，尚未进行 LoRA/QLoRA 训练，不宣称微调效果。

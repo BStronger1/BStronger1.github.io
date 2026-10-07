@@ -25,9 +25,9 @@ Selected Projects
 
 **[AI PPT生成 — AI Presentation Generator]({{ '/projects/ai-ppt-generator/' | relative_url }})** converts project materials into editable presentation slides with outline-level source excerpts. The application includes a project-defense workflow, evidence review, and persistent deployment on a private Linux server. A screenshot and downloadable example are available on the project page.
 
-**[Agent Workbench](https://github.com/BStronger1/agent-workbench)** — A personal AI workspace connecting project memory, self-contained application generation, browser interaction checks and bounded repair. Includes source-grounded document retrieval, development reports and user-configured models with encrypted API-key storage. Built with Java/Spring Boot, Vue/TypeScript and Playwright. [Project details](/projects/agent-workbench/)
+**[Agent Workbench](https://github.com/BStronger1/agent-workbench)** — A personal AI workspace connecting project memory, self-contained application generation, browser interaction checks and bounded repair. Includes source-grounded document retrieval, development reports and user-configured models with encrypted API-key storage. Built with Python/FastAPI, LangChain, LangGraph, pgvector, Java/Spring Boot, Vue/TypeScript and Playwright. [Project details](/projects/agent-workbench/)
 
-Added LangChain/LangGraph role workflows, persistent recovery, pgvector hybrid retrieval and cited RAG, covered by engineering integration tests. External-model comparison and private-server rollout of the upgrade await network recovery. Verification covers 25 backend tests, browser checks and 36 deterministic demo cases. Six real API tasks with DMXAPI-deepseek-v4-flash accepted four tasks and retained two failed repair cases; results are specific to these development scenarios.
+LangChain/LangGraph role workflows, checkpoint recovery, pgvector hybrid retrieval and cited RAG; verified with 29 Java tests, 17 Python tests and browser checks. The upgrade is deployed on private HTTPS. Six paired real-model tasks with DMXAPI-deepseek-v4-flash made 15 calls with 4/6 accepted, plus 2/2 cited RAG probes passed. All failures are retained; these are development scenarios, not a general benchmark.
 
 News
 ======

@@ -59,9 +59,9 @@ Python / FastAPI · LangChain · LangGraph · PostgreSQL / pgvector · Embedding
 * Implemented RAG with local multilingual embeddings and pgvector, combining Chinese-bigram/keyword and vector retrieval through reciprocal rank fusion, workspace/project filtering, active-memory synchronization and source-ID validation.
 * Developed structured Playwright contracts for checkbox, input, click and result assertions; froze acceptance criteria before generation and fed browser failures and reviewer feedback into the coding role while preserving artifacts and screenshots.
 * Added user-configured models, AES-256-GCM encrypted credentials, bounded queues, token-budget prechecks and per-role usage records while preserving the Java baseline and demo workflow.
-* Verified backend behavior, checkpoint recovery, real pgvector/embedding integration and browser execution. The baseline completed six real DMXAPI-deepseek-v4-flash tasks (eight calls, four accepted), retaining all failure evidence.
+* Verified 29 Java and 17 Python tests plus real pgvector/embedding and browser integration. Evaluated six paired single/multi-role tasks with DMXAPI-deepseek-v4-flash (15 calls, 4/6 accepted) and two cited RAG probes (2/2 passed), preserving failures.
 
-External-model comparison and the private-server rollout of the graph version remain pending network recovery. No model fine-tuning has been performed.
+Deployed on private HTTPS. These authored development scenarios do not establish multi-agent quality gains; no fine-tuning has been performed. [Verification report](https://github.com/BStronger1/agent-workbench/blob/main/docs/GRAPH-LIVE-RESULTS.md)
 
 Skills
 ======
