@@ -25,7 +25,7 @@ Connect requirements and retrieved memory to LLM-generated HTML, browser accepta
 
 **Stack:** Java 21, Spring Boot, Vue 3, TypeScript, Playwright.
 
-Verified 25 backend tests, browser end-to-end checks and 36 deterministic demo cases. Live-model integration is implemented but not yet API-validated; demo results are workflow checks, not model performance measurements.
+Verified 25 backend tests, browser checks and 36 deterministic demo cases. Six real API tasks using DMXAPI-deepseek-v4-flash made eight generation/repair calls and accepted four tasks; both failed repair cases are preserved.
 
 [View project and evidence]({{ '/projects/agent-workbench/' | relative_url }}) · [Source code](https://github.com/BStronger1/agent-workbench)
 

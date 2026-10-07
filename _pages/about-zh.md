@@ -24,7 +24,7 @@ author_profile: true
 
 **[Agent Workbench](https://github.com/BStronger1/agent-workbench)** 是一个个人 AI 工作台，连接项目记忆、自包含应用生成、浏览器交互检查和有限次数修复。它支持带来源的文档检索、开发报告，以及 API 密钥加密存储的用户自定义模型。技术栈为 Java / Spring Boot、Vue / TypeScript 和 Playwright。[项目详情]({{ '/zh/projects/agent-workbench/' | relative_url }})
 
-验证覆盖 25 项后端测试、浏览器端到端检查和 36 个确定性演示案例。这些结果验证的是工作流程，真实模型集成尚未通过实际 API 调用验收。
+验证覆盖 25 项后端测试、浏览器端到端检查和 36 个确定性演示案例。另完成 DMXAPI-deepseek-v4-flash 的 6 项真实任务测试，按原验收通过 4 项，保留两项失败修复记录；结果不外推为通用模型性能。
 
 动态
 ======

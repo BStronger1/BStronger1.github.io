@@ -27,7 +27,7 @@ Selected Projects
 
 **[Agent Workbench](https://github.com/BStronger1/agent-workbench)** — A personal AI workspace connecting project memory, self-contained application generation, browser interaction checks and bounded repair. Includes source-grounded document retrieval, development reports and user-configured models with encrypted API-key storage. Built with Java/Spring Boot, Vue/TypeScript and Playwright. [Project details](/projects/agent-workbench/)
 
-Verification covers 25 backend tests, browser end-to-end checks and 36 deterministic demo cases. These are workflow validation results; live-model integration has not yet been API-validated.
+Verification covers 25 backend tests, browser checks and 36 deterministic demo cases. Six real API tasks with DMXAPI-deepseek-v4-flash accepted four tasks and retained two failed repair cases; results are specific to these development scenarios.
 
 News
 ======
