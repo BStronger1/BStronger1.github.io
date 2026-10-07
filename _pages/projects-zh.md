@@ -25,7 +25,7 @@ author_profile: true
 
 **技术栈：** Java 21、Spring Boot、Vue 3、TypeScript、Playwright。
 
-通过 25 项后端测试、浏览器端到端检查和 36 个确定性演示案例；另完成 DMXAPI-deepseek-v4-flash 的 6 项真实任务评测（8 次生成/修复调用，按原验收通过 4 项），完整保留两项失败修复案例。
+新增 LangChain / LangGraph 角色工作流、检查点恢复、pgvector 混合检索和带引用 RAG，已通过工程集成验证；新版外部模型对照与内网更新待网络恢复。通过 25 项后端测试、浏览器端到端检查和 36 个确定性演示案例；另完成 DMXAPI-deepseek-v4-flash 的 6 项真实任务评测（8 次生成/修复调用，按原验收通过 4 项），完整保留两项失败修复案例。
 
 [查看项目与验证依据]({{ '/zh/projects/agent-workbench/' | relative_url }}) · [源代码](https://github.com/BStronger1/agent-workbench)
 

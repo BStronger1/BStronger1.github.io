@@ -25,7 +25,7 @@ Connect requirements and retrieved memory to LLM-generated HTML, browser accepta
 
 **Stack:** Java 21, Spring Boot, Vue 3, TypeScript, Playwright.
 
-Verified 25 backend tests, browser checks and 36 deterministic demo cases. Six real API tasks using DMXAPI-deepseek-v4-flash made eight generation/repair calls and accepted four tasks; both failed repair cases are preserved.
+Added LangChain/LangGraph role workflows, persistent recovery, pgvector hybrid retrieval and cited RAG, covered by engineering integration tests. External-model comparison and private-server rollout of the upgrade await network recovery. Verified 25 backend tests, browser checks and 36 deterministic demo cases. Six real API tasks using DMXAPI-deepseek-v4-flash made eight generation/repair calls and accepted four tasks; both failed repair cases are preserved.
 
 [View project and evidence]({{ '/projects/agent-workbench/' | relative_url }}) · [Source code](https://github.com/BStronger1/agent-workbench)
 

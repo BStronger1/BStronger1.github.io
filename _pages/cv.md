@@ -48,17 +48,20 @@ React / TypeScript · FastAPI · PostgreSQL · Redis / ARQ · LangGraph · pytho
 
 Live access is restricted to the authorized internal network; a [project walkthrough and sample PPTX]({{ '/projects/ai-ppt-generator/' | relative_url }}) are publicly available.
 
-### Agent Workbench — Memory-Augmented AI App Generation and Browser-Validated Repair
+### Agent Workbench — AI application development with LangGraph and RAG
 **Personal project · October 2026**
 
-[Source code](https://github.com/BStronger1/agent-workbench) · [Project overview](/projects/agent-workbench/)
+[Source](https://github.com/BStronger1/agent-workbench) · [Project overview](/projects/agent-workbench/)
 
-Java 21 · Spring Boot · Vue 3 / TypeScript · Playwright · Chat Completions-compatible APIs
+Python / FastAPI · LangChain · LangGraph · PostgreSQL / pgvector · Embedding / RAG · Playwright · Java / Spring Boot · Vue / TypeScript
 
-* Implemented an LLM application-generation workflow that assembles requirements, project memory and acceptance criteria into model context, validates generated HTML with Playwright, and feeds failures and previous code into up to three repair attempts with version rollback.
-* Built versioned constraints, decisions and lessons with Chinese-bigram/keyword retrieval, source references and no-memory, recent-request and retrieved-memory context strategies.
-* Added user-configured models and AES-256-GCM encrypted API keys with browser-workspace isolation; bounded the task queue and token budget while recording latency, attempts and provider-reported usage.
-* Verified 25 backend tests, browser end-to-end checks and 36 deterministic demo cases, and deployed private Linux HTTPS access. Ran six real API tasks with `DMXAPI-deepseek-v4-flash` (eight generation/repair calls, four accepted); traced two failed repair cases to generated checkbox workflows that did not satisfy the one-click acceptance contract.
+* Built a LangChain/LangGraph workflow for planning, code generation, browser acceptance, independent review and bounded repair, with single-role and multi-role modes, plan approval and persistent checkpoints. A call journal reuses completed replies and blocks automatic replay of uncertain requests.
+* Implemented RAG with local multilingual embeddings and pgvector, combining Chinese-bigram/keyword and vector retrieval through reciprocal rank fusion, workspace/project filtering, active-memory synchronization and source-ID validation.
+* Developed structured Playwright contracts for checkbox, input, click and result assertions; froze acceptance criteria before generation and fed browser failures and reviewer feedback into the coding role while preserving artifacts and screenshots.
+* Added user-configured models, AES-256-GCM encrypted credentials, bounded queues, token-budget prechecks and per-role usage records while preserving the Java baseline and demo workflow.
+* Verified backend behavior, checkpoint recovery, real pgvector/embedding integration and browser execution. The baseline completed six real DMXAPI-deepseek-v4-flash tasks (eight calls, four accepted), retaining all failure evidence.
+
+External-model comparison and the private-server rollout of the graph version remain pending network recovery. No model fine-tuning has been performed.
 
 Skills
 ======

@@ -7,41 +7,34 @@ permalink: /projects/agent-workbench/
 author_profile: true
 ---
 
-A personal AI workspace centered on LLM application generation: project memory augments model context, browser validation feeds bounded code-repair attempts, and run records retain versions, latency and token usage.
+A personal AI workspace for application generation, project knowledge and executable acceptance. An optional Python service adds LangChain, LangGraph, vector retrieval and planner/coder/reviewer collaboration.
 
-[GitHub repository](https://github.com/BStronger1/agent-workbench) · [Architecture](https://github.com/BStronger1/agent-workbench/blob/main/docs/ARCHITECTURE.md) · [Verification record](https://github.com/BStronger1/agent-workbench/blob/main/docs/EVALUATION.md)
+[GitHub](https://github.com/BStronger1/agent-workbench) · [Architecture and setup](https://github.com/BStronger1/agent-workbench/blob/main/docs/AI-UPGRADE.md)
 
-![Agent Workbench interface](/images/agent-workbench.png)
+### AI implementation
 
-### What it does
+- **Agent workflow:** LangGraph coordinates planning, optional approval, coding, browser validation, review and bounded repair; LangChain handles model access and Pydantic validates structured output.
+- **Recovery:** SQLite checkpoints and a provider-call journal preserve completed replies and block automatic replay of uncertain requests. This does not promise provider-side exactly-once execution.
+- **RAG:** Local multilingual MiniLM embeddings (384 dimensions), pgvector cosine retrieval, Chinese-bigram/keyword matching and reciprocal rank fusion. Queries filter by workspace and project; stale memory is removed and answer citation IDs must belong to retrieved sources.
+- **Executable acceptance:** Playwright runs check/fill/click and exact-text/change assertions. Frozen contracts cannot be modified by coding or repair roles; browser evidence determines acceptance.
+- **Execution controls:** User-supplied models, AES-256-GCM encrypted keys, bounded queues, conservative token prechecks and role-level call records. Credentials are excluded from graph state.
 
-- **Application studio:** self-contained HTML generation, explicit acceptance requirements, browser interaction checks, bounded repair, saved attempts and version selection.
-- **Project memory:** versioned constraints, decisions and lessons; superseded entries become inactive; retrieved context retains source IDs.
-- **Project knowledge:** text/Markdown ingestion with lexical retrieval and paragraph-level references.
-- **Reporting:** Markdown development reports derived from recorded sources and run evidence.
-- **Evaluation:** separate demo/live run labels, latency and usage records, and reproducible contract fixtures.
-- **Model settings:** users supply their own endpoint, model name and API key; configurations are encrypted per browser workspace, with connection testing, enable/disable and removal controls.
+Python / FastAPI · LangChain · LangGraph · PostgreSQL / pgvector · Embedding / RAG · Playwright · Java / Spring Boot · Vue / TypeScript
 
-### Engineering choices
+Spring Boot retains ownership checks and task queues, Vue provides the UI, and FastAPI listens only on loopback with internal authentication. Business snapshots and checkpoints remain a single-instance design.
 
-The AI workflow retrieves project context, calls a Chat Completions-compatible model, checks generated HTML, and runs Playwright text/interaction acceptance checks. Failures and previous code feed the next model attempt, with at most three repairs and a pre-call token-budget check. A two-worker executor has twelve queue slots. Document retrieval and report assembly currently use deterministic logic rather than model-generated answers.
+### Verification and limits
 
-Java 21 and Spring Boot serve the API and packaged Vue/TypeScript frontend. Per-project snapshots persist state without external databases. Generated artifacts remain self-contained HTML: the service does not install or execute model-generated npm projects. Browser preview uses an isolated iframe and content security policy; the verification worker blocks external requests.
+Engineering checks cover Java, Python graph recovery, replay prevention, real PostgreSQL/pgvector, actual ONNX embeddings and Chromium interactions. Six authored Chinese retrieval fixtures achieved Recall@3 of 5/6 with hybrid retrieval and 2/6 with lexical retrieval; this is not held-out evidence of general gains. [Raw retrieval evidence](https://github.com/BStronger1/agent-workbench/blob/main/evidence/retrieval-fixtures.json)
 
-The private deployment supports HTTPS with a dedicated local CA. Certificate-chain and IP-identity verification, browser workflow checks and migration of existing workspace cookies to Secure cookies have been tested. Client devices must explicitly trust the local CA before normal access.
+The baseline Java workflow passed 36 deterministic demo cases and completed six real DMXAPI-deepseek-v4-flash tasks with eight calls and 4/6 accepted. Two repairs still failed the original one-click contract; all failures are preserved. [Live baseline report](https://github.com/BStronger1/agent-workbench/blob/main/docs/LIVE-RESULTS.md)
 
-### What has been verified
+A paired single-role/multi-role runner now uses identical contracts, but its first live request failed during HTTPS connection before returning an artifact. Remaining tasks were stopped; multi-agent effectiveness is not yet established. [Interrupted probe](https://github.com/BStronger1/agent-workbench/blob/main/evidence/graph-live-network-failure.json)
 
-25 backend tests cover persistence, ownership isolation, memory updates, failure handling, repair limits, budget checks, encrypted model configuration and request routing. Browser checks cover the generation workflow, retrieval, reporting and model settings. In 36 deterministic demo cases, 18 passed initially and 18 intentionally injected button failures passed after a predefined repair. This validates the workflow on those fixtures, **not** real-model quality or the effectiveness of memory retrieval.
+![Baseline application generated by the real model]({{ '/images/agent-workbench-live.png' | relative_url }})
 
-On 2026-10-07, six real API tasks using `DMXAPI-deepseek-v4-flash` made eight generation/repair calls, with 4/6 accepted initially and finally. Two checklist tasks retained checkbox prerequisites that failed the one-click acceptance contract even after repair. All failures are preserved; these development probes do not establish general success rates or memory benefits.
+### Deployment and training
 
-Provider-reported usage was 4,324 input and 12,099 output tokens, with a mean task duration of 60.21 seconds. Post-hoc isolated replay confirmed that selecting a checkbox before clicking updates the count; original acceptance results remain unchanged.
+The baseline is deployed on private Linux HTTPS with a dedicated local CA. Upgrade scripts are available; the graph version has not reached the server because turing SSH remains unavailable.
 
-[Full live report and raw evidence](https://github.com/BStronger1/agent-workbench/blob/main/docs/LIVE-RESULTS.md)
-
-![Research task board generated by the real model]({{ "/images/agent-workbench-live.png" | relative_url }})
-
-### Personal project
-
-I developed Agent Workbench to bring application building, project knowledge and development reporting into one workspace. The implementation includes memory versioning, acceptance contracts, bounded repair, browser verification, user-configured models, evidence reporting and deployment tooling.
+A candidate-training-data exporter groups samples by task and marks them for human review. No LoRA/QLoRA training or fine-tuning result is claimed.

@@ -44,17 +44,20 @@ React / TypeScript · FastAPI · PostgreSQL · Redis / ARQ · LangGraph · pytho
 
 完整服务仅限授权内网访问；公开页面提供[项目介绍与示例 PPTX]({{ '/zh/projects/ai-ppt-generator/' | relative_url }})。
 
-### Agent Workbench — 项目记忆驱动的 AI 应用生成与自动验收工作台
+### Agent Workbench — 基于 LangGraph 与 RAG 的 AI 应用开发工作台
 **个人项目 · 2026 年 10 月**
 
 [源代码](https://github.com/BStronger1/agent-workbench) · [项目概览]({{ '/zh/projects/agent-workbench/' | relative_url }})
 
-Java 21 · Spring Boot · Vue 3 / TypeScript · Playwright · Chat Completions 兼容接口
+Python / FastAPI · LangChain · LangGraph · PostgreSQL / pgvector · Embedding / RAG · Playwright · Java / Spring Boot · Vue / TypeScript
 
-* 实现大模型应用生成工作流：将用户需求、项目记忆和验收要求组装为模型上下文，解析 HTML 产物，通过 Playwright 检查页面文本与按钮交互，将失败原因和上一版代码回传模型，支持最多 3 次修复与版本回退。
-* 实现项目约束、决策和经验的版本化管理，采用中文双字与关键词匹配检索上下文，支持无记忆、近期需求、检索记忆三种策略，保留召回来源与失效版本。
-* 实现用户自选模型与 API Key 配置，采用 AES-256-GCM 加密和浏览器空间隔离；为生成任务加入有限队列、Token 预算检查，以及耗时、尝试次数和供应商用量记录。
-* 完成 25 项后端测试、浏览器端到端验证和 36 项确定性演示验收，部署 Linux 内网 HTTPS 服务。使用 `DMXAPI-deepseek-v4-flash` 完成 6 项真实任务评测（8 次生成/修复调用、4 项验收通过），定位清单勾选前置条件与单击验收的不一致，保留两项失败修复证据。
+* 基于 LangChain 与 LangGraph 构建需求规划、代码生成、浏览器验收、独立评审及有界修复工作流；支持单角色与多角色模式、计划人工确认和持久化检查点恢复，通过调用账本复用已完成结果，阻止不确定请求自动重放。
+* 实现 RAG 知识模块：使用本地多语言 Embedding 与 pgvector 存储项目文档和有效记忆，融合中文双字/关键词检索与向量召回，通过 RRF 排序、空间/项目过滤和来源 ID 校验提供带引用回答。
+* 将 Playwright 验收升级为勾选、输入、点击及结果断言的结构化契约，在生成前固定验收标准，将执行错误与评审意见回传编码角色，保存失败产物、截图和修复记录。
+* 支持用户自选模型及 AES-256-GCM 加密密钥配置，使用有限任务队列、调用前 Token 预算检查及分角色调用用量记录；保留 Java 基础流程与演示兼容性。
+* 完成后端、状态图恢复、真实 pgvector/Embedding 和浏览器集成验证；基础链路使用 DMXAPI-deepseek-v4-flash 完成 6 项真实任务（8 次调用，4 项通过），保留全部失败证据。
+
+新增图编排版的外部模型对照和内网部署更新受网络连接影响待完成；未进行模型微调。
 
 技能
 ======
